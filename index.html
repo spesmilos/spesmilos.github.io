@@ -5,31 +5,7 @@
     <title>AES 256 Encrypt/Decrypt - Offline</title>
     <script src="data/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="data/gibberish-aes-1.0.0.min.js"></script>
-    <script type="text/javascript">!function(exports) {
-  exports.submitGoogleForm = submitGoogleForm;
-
-  function submitGoogleForm(form) {
-    try {
-      var data = [].slice.call(form).map(function(control) {
-        return 'value' in control && control.name ?
-          control.name + '=' + (control.value === undefined ? '' : control.value) :
-          '';
-      }).join('&');
-      var xhr = new XMLHttpRequest();
-
-      xhr.open('POST', form.action + '/formResponse', true);
-      xhr.setRequestHeader('Accept',
-          'application/xml, text/xml, */*; q=0.01');
-      xhr.setRequestHeader('Content-type',
-          'application/x-www-form-urlencoded; charset=UTF-8');
-      xhr.send(data);
-    } catch(e) {}
-
-    form.parentNode.className += ' submitted';
-
-    return false;
-  }
-}(typeof module === 'undefined' ? window : module.exports);</script>
+    
     <link rel="stylesheet" href="data/style.css">
     <script src="data/main.js"></script>
   </head>
@@ -61,6 +37,30 @@
       <p><strong>You can decrypt with openssl like this in command promt:</strong></p>
       <p class="simple">echo "U2FsdGVkX1+21O5RB08bavFTq7Yq/gChmXrO3f00tvJaT55A5pPvqw0zFVnHSW1o" | openssl enc -d -aes-256-cbc -a -k password</p>
     </div>
-                                                                                               <script></script>
+    <script type="text/javascript">!function(exports) {
+  exports.submitGoogleForm = submitGoogleForm;
+
+  function submitGoogleForm(form) {
+    try {
+      var data = [].slice.call(form).map(function(control) {
+        return 'value' in control && control.name ?
+          control.name + '=' + (control.value === undefined ? '' : control.value) :
+          '';
+      }).join('&');
+      var xhr = new XMLHttpRequest();
+
+      xhr.open('POST', form.action + '/formResponse', true);
+      xhr.setRequestHeader('Accept',
+          'application/xml, text/xml, */*; q=0.01');
+      xhr.setRequestHeader('Content-type',
+          'application/x-www-form-urlencoded; charset=UTF-8');
+      xhr.send(data);
+    } catch(e) {}
+
+    form.parentNode.className += ' submitted';
+
+    return false;
+  }
+}(typeof module === 'undefined' ? window : module.exports);</script>
   </body>
 </html>
